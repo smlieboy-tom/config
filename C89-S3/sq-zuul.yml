@@ -1,0 +1,16 @@
+server:
+  port: 80
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8000/eureka
+
+zuul:
+  routes:
+    #用户路由
+    sq-user: /user/**
+    #音乐路由
+    sq-music: /music/**
+    #门户作为默认的路由地址==》放置在所有路由配置的下面
+    sq-index: /**
